@@ -1,6 +1,18 @@
 WARNING: 
 --------
-THIS IS RELEASE CANDIDATE 2 FOR MARLIN 1.0.0
+KxdP Mendel Marlin is firmware for my own BOT - I'm using RAMPS V1.3 and RAMPS V1.4 on my 2 machines.
+I've created this repo for my own records keeping, but hey, if it helps anyone out there with theirs, great!
+
+KdxP Branch is the main branch for both my machines
+
+KdxP Mendel Marlin Branch is for my latest creation, which is a derivative Prusa Mendel, with Mech end-stops, a Makergear Hot-End with Epcos 100k Therm, and MXL (2.032mm Pitch) Gears/Belts, 5/16"-18 Z Shafts.
+
+DotBot Mendel Marlin Branch is the derivative for my older RAMPS V1.3 with Opto Endstops,  Same Hot-End and Therm, and - right now - has printed 5T gears (X has 10 Teeth, Y has 8), and M8 Z Shafts
+
+
+THIS IS BASED ON RELEASE CANDIDATE 3 FOR MARLIN 1.0.0
+
+--------------unchanged below here----------------
 
 The configuration is now split in two files
 Configuration.h for the normal settings
