@@ -8,7 +8,7 @@
 //User specified version info of THIS file to display in [Pronterface, etc] terminal window during startup.
 //Implementation of an idea by Prof Braino to inform user that any changes made
 //to THIS file by the user have been successfully uploaded into firmware.
-#define STRING_VERSION_CONFIG_H "2012-08-14 14:21" //Personal revision number for changes to THIS file.
+#define STRING_VERSION_CONFIG_H "KdxP Marlin v0.1.0 2012-08-14" //Personal revision number for changes to THIS file.
 #define STRING_CONFIG_H_AUTHOR "Chris" //Who made the changes.
 
 // This determines the communication speed of the printer
