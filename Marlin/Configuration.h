@@ -8,7 +8,7 @@
 //User specified version info of THIS file to display in [Pronterface, etc] terminal window during startup.
 //Implementation of an idea by Prof Braino to inform user that any changes made
 //to THIS file by the user have been successfully uploaded into firmware.
-#define STRING_VERSION_CONFIG_H "2012-08-14 14:21" //Personal revision number for changes to THIS file.
+#define STRING_VERSION_CONFIG_H "KdxP Marlin v0.1.0 2012-08-14" //Personal revision number for changes to THIS file.
 #define STRING_CONFIG_H_AUTHOR "Chris" //Who made the changes.
 
 // This determines the communication speed of the printer
@@ -106,13 +106,13 @@
 // If you are using a preconfigured hotend then you can use one of the value sets by uncommenting it
 // Ultimaker
 //    #define  DEFAULT_Kp 22.2
-//    #define  DEFAULT_Ki 1.08  
-//    #define  DEFAULT_Kd 114  
+//    #define  DEFAULT_Ki 1.08
+//    #define  DEFAULT_Kd 114
 
 // Makergear
 //    #define  DEFAULT_Kp 7.0
-//    #define  DEFAULT_Ki 0.1  
-//    #define  DEFAULT_Kd 12  
+//    #define  DEFAULT_Ki 0.1
+//    #define  DEFAULT_Kd 12
 
 // Makergear Tuned with Autotune 8/14/2012 by cakeller98
     #define  DEFAULT_Kp 46
