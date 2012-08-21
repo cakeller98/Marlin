@@ -8,7 +8,7 @@
 //User specified version info of THIS file to display in [Pronterface, etc] terminal window during startup.
 //Implementation of an idea by Prof Braino to inform user that any changes made
 //to THIS file by the user have been successfully uploaded into firmware.
-#define STRING_VERSION_CONFIG_H "KdxP Marlin v0.1.0 2012-08-14" //Personal revision number for changes to THIS file.
+#define STRING_VERSION_CONFIG_H "KdxP Marlin v0.1.1 2012-08-20" //Personal revision number for changes to THIS file.
 #define STRING_CONFIG_H_AUTHOR "Chris" //Who made the changes.
 
 // This determines the communication speed of the printer
@@ -179,10 +179,10 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 #define DISABLE_X false
 #define DISABLE_Y false
 #define DISABLE_Z true
-#define DISABLE_E true // For all extruders
+#define DISABLE_E false // For all extruders
 
-#define INVERT_X_DIR true    // for Mendel set to false, for Orca set to true
-#define INVERT_Y_DIR true    // for Mendel set to true, for Orca set to false
+#define INVERT_X_DIR false    // for Mendel set to false, for Orca set to true
+#define INVERT_Y_DIR false    // for Mendel set to true, for Orca set to false
 #define INVERT_Z_DIR false     // for Mendel set to false, for Orca set to true
 #define INVERT_E0_DIR true   // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E1_DIR true    // for direct drive extruder v9 set to true, for geared extruder set to false
@@ -197,11 +197,11 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 #define min_software_endstops true //If true, axis won't move to coordinates less than HOME_POS.
 #define max_software_endstops true  //If true, axis won't move to coordinates greater than the defined lengths below.
 // Travel limits after homing
-#define X_MAX_POS 180
+#define X_MAX_POS 200
 #define X_MIN_POS 0
-#define Y_MAX_POS 210
+#define Y_MAX_POS 200
 #define Y_MIN_POS 0
-#define Z_MAX_POS 120
+#define Z_MAX_POS 115
 #define Z_MIN_POS 0
 
 #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
@@ -215,21 +215,21 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 
 //// MOVEMENT SETTINGS
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
-#define HOMING_FEEDRATE {50*60, 50*60, 4*60, 0}  // set the homing speeds (mm/min)
+#define HOMING_FEEDRATE {80*60, 80*60, 4*60, 0}  // set the homing speeds (mm/min)
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {3200 / 2.032 / 21 , 3200 / 2.032 / 21 , 3200 / 25.4 * 18 , 1380}  // default steps per unit for ultimaker
-#define DEFAULT_MAX_FEEDRATE          {500, 500, 4, 13.5}    // (mm/sec)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {3200 / 2.032 / 21 , 3200 / 2.032 / 21 , 3200 / ( 25.4/18 ) , 1380}  // default steps per unit for ultimaker
+#define DEFAULT_MAX_FEEDRATE          {500, 500, 4, 26}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {9000,9000,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
-#define DEFAULT_ACCELERATION          3000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
+#define DEFAULT_ACCELERATION          4000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  3000   // X, Y, Z and E max acceleration in mm/s^2 for r retracts
 
 //
-#define DEFAULT_XYJERK                15.0    // (mm/sec)
-#define DEFAULT_ZJERK                 0.2     // (mm/sec)
-#define DEFAULT_EJERK                 2.0    // (mm/sec)
+#define DEFAULT_XYJERK                20.0    // (mm/sec)
+#define DEFAULT_ZJERK                 0.4     // (mm/sec)
+#define DEFAULT_EJERK                 2.5    // (mm/sec)
 
 //===========================================================================
 //=============================Additional Features===========================
@@ -241,10 +241,10 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 // M501 - reads parameters from EEPROM (if you need reset them after you changed them temporarily).
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //define this to enable eeprom support
-//#define EEPROM_SETTINGS
+#define EEPROM_SETTINGS
 //to disable EEPROM Serial responses and decrease program space by ~1700 byte: comment this out:
 // please keep turned on if you can.
-//#define EEPROM_CHITCHAT
+#define EEPROM_CHITCHAT
 
 //LCD and SD support
 //#define ULTRA_LCD  //general lcd support, also 16x2

@@ -109,8 +109,8 @@
 //default stepper release if idle
 #define DEFAULT_STEPPER_DEACTIVE_TIME 5
 
-#define DEFAULT_MINIMUMFEEDRATE       0.0     // minimum feedrate
-#define DEFAULT_MINTRAVELFEEDRATE     0.0
+#define DEFAULT_MINIMUMFEEDRATE       20.0     // minimum feedrate
+#define DEFAULT_MINTRAVELFEEDRATE     20.0
 
 // minimum time in microseconds that a movement needs to take if the buffer is emptied.
 #define DEFAULT_MINSEGMENTTIME        20000
@@ -169,7 +169,7 @@
 #define MM_PER_ARC_SEGMENT 1
 #define N_ARC_CORRECTION 25
 
-const int dropsegments=5; //everything with less than this number of steps will be ignored as move and joined with the next movement
+const int dropsegments=3; //everything with less than this number of steps will be ignored as move and joined with the next movement
 
 // If you are using a RAMPS board or cheap E-bay purchased boards that do not detect when an SD card is inserted
 // You can get round this by connecting a push button or single throw switch to the pin defined as SDCARDCARDDETECT
