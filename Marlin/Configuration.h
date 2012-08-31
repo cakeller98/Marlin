@@ -106,18 +106,24 @@
 // If you are using a preconfigured hotend then you can use one of the value sets by uncommenting it
 // Ultimaker
 //    #define  DEFAULT_Kp 22.2
-//    #define  DEFAULT_Ki 1.08  
-//    #define  DEFAULT_Kd 114  
+//    #define  DEFAULT_Ki 1.08
+//    #define  DEFAULT_Kd 114
 
 // Makergear
 //    #define  DEFAULT_Kp 7.0
-//    #define  DEFAULT_Ki 0.1  
-//    #define  DEFAULT_Kd 12  
+//    #define  DEFAULT_Ki 0.1
+//    #define  DEFAULT_Kd 12
 
 // Makergear Tuned with Autotune 8/14/2012 by cakeller98
-    #define  DEFAULT_Kp 46
-    #define  DEFAULT_Ki 4.06
-    #define  DEFAULT_Kd 130.37
+//  #define  DEFAULT_Kp 46
+//  #define  DEFAULT_Ki 4.06
+//  #define  DEFAULT_Kd 130.37
+// Makergear Tuned with Autotune 8/30/2012 by cakeller98
+    #define  DEFAULT_Kp 53.46
+    #define  DEFAULT_Ki 5.23
+    #define  DEFAULT_Kd 136.64
+
+
 
 // Mendel Parts V9 on 12V
 //    #define  DEFAULT_Kp 63.0
@@ -219,8 +225,20 @@ const bool Z_ENDSTOPS_INVERTING = false; // set to true to invert the logic of t
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {3200 / 2.032 / 21 , 3200 / 2.032 / 21 , 3200 / 25.4 * 18 , 1380}  // default steps per unit for ultimaker
-#define DEFAULT_MAX_FEEDRATE          {500, 500, 4, 13.5}    // (mm/sec)
+// Belts/Pulleys are MXL, MXL pitch is 2.032 mm, Pulleys have 21 Teeth, Motors do 3200 microsteps/revolution, therefore:
+// X/Y Steps/mm = 3200.0 steps/rev / 21 tooths/rev / 2.032 mm/tooth
+// X/Y Steps/mm = ( 3200.0 steps/(A)  / 21(B)/(A) )/ 2.032 mm/(B)  <-- As and Bs cancel each other out.
+// X/Y Steps/mm = (3200.0 / 21.0) / 2.032 steps/mm
+// X/Y Steps/mm = 74.990626171728533933258342707162
+// Z Steps/mm = (3200.0 steps/rev * 24.0 revs/inch / 25.4 mm/inch )
+// Z Steps/mm = 3200.0 * (24.0/25.4)
+// Z Steps/mm = 3023.6220472440944881889763779528
+// E Steps/mm = 3200.0 steps/mrev * 13.6 mrevs/rev / (12 * PI) mm/rev
+// E Steps/mm = 3200.0 * 13.6 / (12.0 * PI) steps/mm
+// E Steps/mm = 1154.4038538932141687769702303286
+
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {(3200.0 / 21.0) / 2.032 , (3200.0 / 21.0) / 2.032 , 3200.0 * (24.0 / 25.4) , 3200.0 * 13.6 / 12.0 * 3.1415926535897932384626433832795}
+#define DEFAULT_MAX_FEEDRATE          {500, 500, 3, 13.5}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {9000,9000,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          3000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
